@@ -75,6 +75,8 @@ myDzenPP = dzenPP
             "ResizableTall"        -> "^fg(#FF1F66)^i(" ++ iconsPath ++ "tall.xbm)^fg()"
             "Mirror ResizableTall" -> "^fg(#FF1F66)^i(" ++ iconsPath ++ "mtall.xbm)^fg()"
             "Full"                 -> "^fg(#FF1F66)^i(" ++ iconsPath ++ "full.xbm)^fg()"
+            "IM ReflectX IM Full"  -> "^fg(#FF1F66)^i(" ++ iconsPath ++ "mouse.xbm)^fg()"
+            "IM ResizableTall"     -> "^fg(#FF1F66)^i(" ++ iconsPath ++ "cpu.xbm)^fg()"
             _                      -> pad s
     }
 
