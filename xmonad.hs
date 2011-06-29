@@ -2,6 +2,7 @@ import XMonad
 
 import System.IO                   (hPutStrLn)
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.UrgencyHook
 import XMonad.Util.Run             (spawnPipe)
 import XMonad.Layout.NoBorders
 import XMonad.Layout.IM
@@ -19,7 +20,7 @@ main :: IO ()
 main = do
     myStatusBarPipe <- spawnPipe myStatusBar
     spawn "~/bin/dzconky"
-    xmonad $ defaultConfig
+    xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
         { terminal           = myTerminal
         , modMask            = myModMask
         , borderWidth        = myBorderWidth
@@ -68,6 +69,7 @@ myDzenPP :: PP
 myDzenPP = dzenPP
     { ppHidden          = dzenColor "#CCCCCC" "#444444" . hideNSP
     , ppCurrent         = dzenColor "#FFFFFF" "#FF1F66" . pad'
+    , ppUrgent          = dzenColor "#800000" "#FF91CF" . dzenStrip
     , ppHiddenNoWindows = dzenColor "#444444" "" . pad'
     , ppTitle           = dzenColor "#909090" "" . pad'
     , ppLayout          = dzenColor "#909090" "" . pad' . \s ->
