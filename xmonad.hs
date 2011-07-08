@@ -36,7 +36,7 @@ myStatusBar :: String
 myStatusBar = "dzen2 " ++ myStatusBarArgs
 
 myStatusBarArgs :: String
-myStatusBarArgs = "-fn 'Verdana-8' -bg '#1a1a1a' -fg '#aaaaaa' -h 20 -w 840 -ta l "
+myStatusBarArgs = "-fn 'Verdana-8' -bg '#1a1a1a' -fg '#aaaaaa' -h 20 -w 840 -ta l -p -e 'onstart=lower'"
 
 myTerminal :: String
 myTerminal = "urxvtc"
