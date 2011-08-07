@@ -29,7 +29,7 @@ main = do
         , workspaces         = myWorkspaces
         , logHook            = dynamicLogWithPP $ myDzenPP { ppOutput = hPutStrLn myStatusBarPipe }
         , layoutHook         = myLayoutHook
-        , manageHook         = myManageHook
+        , manageHook         = pbManageHook <+> myManageHook
         } `additionalKeysP` myKeys
 
 myStatusBar :: String
